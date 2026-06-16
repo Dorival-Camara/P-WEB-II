@@ -1,32 +1,31 @@
 <?php
-require 'helpers.php';
+ini_set('highlight.comment', '#6A9955');
+ini_set('highlight.default', '#D4D4D4');
+ini_set('highlight.html', '#D4D4D4');
+ini_set('highlight.keyword', '#569CD6');
+ini_set('highlight.string', '#CE9178');
 
-// ===== Exemplo 1: if / else =====
+// ===== Exemplo 1 =====
 ob_start();
 $idade = 17;
-
 if ($idade >= 18) {
     echo "Maior de idade";
 } else {
     echo "Menor de idade";
 }
 $saida1 = ob_get_clean();
-
-$codigo1 = <<<'PHP'
+$cod1 = highlight_string('<?php
 $idade = 17;
 
 if ($idade >= 18) {
     echo "Maior de idade";
 } else {
     echo "Menor de idade";
-}
-PHP;
+}', true);
 
-
-// ===== Exemplo 2: if / elseif / else =====
+// ===== Exemplo 2 =====
 ob_start();
 $nota = 7.5;
-
 if ($nota >= 9) {
     $conceito = "Excelente";
 } elseif ($nota >= 7) {
@@ -36,11 +35,10 @@ if ($nota >= 9) {
 } else {
     $conceito = "Insuficiente";
 }
-
+echo "Nota: $nota\n";
 echo "Conceito: $conceito";
 $saida2 = ob_get_clean();
-
-$codigo2 = <<<'PHP'
+$cod2 = highlight_string('<?php
 $nota = 7.5;
 
 if ($nota >= 9) {
@@ -53,53 +51,41 @@ if ($nota >= 9) {
     $conceito = "Insuficiente";
 }
 
-echo "Conceito: $conceito";
-PHP;
+echo "Nota: $nota";
+echo "Conceito: $conceito";', true);
 
-
-// ===== Exemplo 3: switch / case =====
+// ===== Exemplo 3 =====
 ob_start();
 $diaSemana = 3;
-
 switch ($diaSemana) {
-    case 1:
-        $nomeDia = "Domingo";
-        break;
-    case 2:
-        $nomeDia = "Segunda-feira";
-        break;
-    case 3:
-        $nomeDia = "Terça-feira";
-        break;
-    default:
-        $nomeDia = "Dia inválido";
+    case 1: $nomeDia = "Domingo"; break;
+    case 2: $nomeDia = "Segunda-feira"; break;
+    case 3: $nomeDia = "Terça-feira"; break;
+    case 4: $nomeDia = "Quarta-feira"; break;
+    case 5: $nomeDia = "Quinta-feira"; break;
+    case 6: $nomeDia = "Sexta-feira"; break;
+    case 7: $nomeDia = "Sábado"; break;
+    default: $nomeDia = "Dia inválido";
 }
-
-echo $nomeDia;
+echo "Dia $diaSemana = $nomeDia";
 $saida3 = ob_get_clean();
-
-$codigo3 = <<<'PHP'
+$cod3 = highlight_string('<?php
 $diaSemana = 3;
 
 switch ($diaSemana) {
-    case 1:
-        $nomeDia = "Domingo";
-        break;
-    case 2:
-        $nomeDia = "Segunda-feira";
-        break;
-    case 3:
-        $nomeDia = "Terça-feira";
-        break;
-    default:
-        $nomeDia = "Dia inválido";
+    case 1: $nomeDia = "Domingo"; break;
+    case 2: $nomeDia = "Segunda-feira"; break;
+    case 3: $nomeDia = "Terça-feira"; break;
+    case 4: $nomeDia = "Quarta-feira"; break;
+    case 5: $nomeDia = "Quinta-feira"; break;
+    case 6: $nomeDia = "Sexta-feira"; break;
+    case 7: $nomeDia = "Sábado"; break;
+    default: $nomeDia = "Dia inválido";
 }
 
-echo $nomeDia;
-PHP;
+echo "Dia $diaSemana = $nomeDia";', true);
 
-
-// ===== Exemplo 4: operador ternário e match (PHP 8) =====
+// ===== Exemplo 4 =====
 ob_start();
 $idade = 20;
 $status = ($idade >= 18) ? "Adulto" : "Menor";
@@ -111,12 +97,10 @@ $conceito = match (true) {
     $nota >= 5 => "Regular",
     default => "Insuficiente",
 };
-
 echo "Status: $status\n";
 echo "Conceito (match): $conceito";
 $saida4 = ob_get_clean();
-
-$codigo4 = <<<'PHP'
+$cod4 = highlight_string('<?php
 $idade = 20;
 $status = ($idade >= 18) ? "Adulto" : "Menor";
 
@@ -128,25 +112,21 @@ $conceito = match (true) {
     default => "Insuficiente",
 };
 
-echo "Status: $status\n";
-echo "Conceito (match): $conceito";
-PHP;
+echo "Status: $status";
+echo "Conceito (match): $conceito";', true);
 
-
-// ===== Exemplo 5: operadores lógicos (validação de login) =====
+// ===== Exemplo 5 =====
 ob_start();
 $usuario = "admin";
 $senha = "1234";
 $ativo = true;
-
 if ($usuario === "admin" && $senha === "1234" && $ativo) {
     echo "Login permitido";
 } else {
     echo "Login negado";
 }
 $saida5 = ob_get_clean();
-
-$codigo5 = <<<'PHP'
+$cod5 = highlight_string('<?php
 $usuario = "admin";
 $senha = "1234";
 $ativo = true;
@@ -155,8 +135,7 @@ if ($usuario === "admin" && $senha === "1234" && $ativo) {
     echo "Login permitido";
 } else {
     echo "Login negado";
-}
-PHP;
+}', true);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -166,7 +145,7 @@ PHP;
   <title>02 - Estruturas de Decisão</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="pagina-2">
 
   <div class="faixa faixa-2"></div>
 
@@ -179,58 +158,97 @@ PHP;
 
   <div class="hero">
     <div class="numero">02</div>
-    <div class="badge cor-2">Integrante 2 </div>
+    <div class="badge badge-2">Integrante 2</div>
     <h1>Estruturas de Decisão</h1>
     <p>Como o código toma decisões com if, else, switch, ternário e match.</p>
   </div>
 
   <div class="indice">
-    <a href="#exemplo-1">1. if / else</a>
-    <a href="#exemplo-2">2. if / elseif / else</a>
-    <a href="#exemplo-3">3. switch / case</a>
-    <a href="#exemplo-4">4. Ternário e match</a>
-    <a href="#exemplo-5">5. Operadores lógicos</a>
+    <a href="#ex1">1. if / else</a>
+    <a href="#ex2">2. if / elseif / else</a>
+    <a href="#ex3">3. switch / case</a>
+    <a href="#ex4">4. Ternário e match</a>
+    <a href="#ex5">5. Operadores lógicos</a>
   </div>
 
-  <?php
-  renderizarExemplo(
-      1,
-      "if / else",
-      "A estrutura mais básica: executa um bloco se a condição for verdadeira, e outro se for falsa.",
-      $codigo1, $saida1, 2
-  );
+  <section class="exemplo" id="ex1">
+    <div class="exemplo-cabecalho">
+      <span class="exemplo-numero numero-2">1</span>
+      <div>
+        <h2>if / else</h2>
+        <p>A estrutura mais básica: executa um bloco se a condição for verdadeira, e outro se for falsa.</p>
+      </div>
+    </div>
+    <div class="codigo"><?= $cod1 ?></div>
+    <div class="saida">
+      <div class="rotulo">Saída</div>
+      <pre class="cor-2"><?= htmlspecialchars($saida1) ?></pre>
+    </div>
+  </section>
 
-  renderizarExemplo(
-      2,
-      "if / elseif / else",
-      "Permite testar várias condições em sequência, parando na primeira que for verdadeira.",
-      $codigo2, $saida2, 2
-  );
+  <section class="exemplo" id="ex2">
+    <div class="exemplo-cabecalho">
+      <span class="exemplo-numero numero-2">2</span>
+      <div>
+        <h2>if / elseif / else</h2>
+        <p>Permite testar várias condições em sequência, parando na primeira que for verdadeira.</p>
+      </div>
+    </div>
+    <div class="codigo"><?= $cod2 ?></div>
+    <div class="saida">
+      <div class="rotulo">Saída</div>
+      <pre class="cor-2"><?= htmlspecialchars($saida2) ?></pre>
+    </div>
+  </section>
 
-  renderizarExemplo(
-      3,
-      "switch / case",
-      "Ideal quando uma mesma variável é comparada com vários valores possíveis, como dias da semana.",
-      $codigo3, $saida3, 2
-  );
+  <section class="exemplo" id="ex3">
+    <div class="exemplo-cabecalho">
+      <span class="exemplo-numero numero-2">3</span>
+      <div>
+        <h2>switch / case</h2>
+        <p>Ideal quando uma mesma variável é comparada com vários valores possíveis, como dias da semana.</p>
+      </div>
+    </div>
+    <div class="codigo"><?= $cod3 ?></div>
+    <div class="saida">
+      <div class="rotulo">Saída</div>
+      <pre class="cor-2"><?= htmlspecialchars($saida3) ?></pre>
+    </div>
+  </section>
 
-  renderizarExemplo(
-      4,
-      "Operador ternário e match (PHP 8)",
-      "O ternário resume um if/else simples em uma linha. O match compara valores e retorna um resultado, de forma mais segura que o switch.",
-      $codigo4, $saida4, 2
-  );
+  <section class="exemplo" id="ex4">
+    <div class="exemplo-cabecalho">
+      <span class="exemplo-numero numero-2">4</span>
+      <div>
+        <h2>Operador ternário e match (PHP 8)</h2>
+        <p>O ternário resume um if/else simples em uma linha. O match compara valores de forma mais segura que o switch.</p>
+      </div>
+    </div>
+    <div class="codigo"><?= $cod4 ?></div>
+    <div class="saida">
+      <div class="rotulo">Saída</div>
+      <pre class="cor-2"><?= htmlspecialchars($saida4) ?></pre>
+    </div>
+  </section>
 
-  renderizarExemplo(
-      5,
-      "Operadores lógicos (&&, ||, !)",
-      "Combinam várias condições em uma só decisão — aqui, um login só é permitido se todas as condições forem verdadeiras.",
-      $codigo5, $saida5, 2
-  );
-  ?>
+  <section class="exemplo" id="ex5">
+    <div class="exemplo-cabecalho">
+      <span class="exemplo-numero numero-2">5</span>
+      <div>
+        <h2>Operadores lógicos (&amp;&amp;, ||, !)</h2>
+        <p>Combinam várias condições em uma só decisão — aqui, um login só é permitido se todas forem verdadeiras.</p>
+      </div>
+    </div>
+    <div class="codigo"><?= $cod5 ?></div>
+    <div class="saida">
+      <div class="rotulo">Saída</div>
+      <pre class="cor-2"><?= htmlspecialchars($saida5) ?></pre>
+    </div>
+  </section>
 
   <div class="rodape">
-    <a href="topico3.php">Próximo tópico: Laços de Repetição →</a>
+    <a href="topico1.php">← Variáveis e Tipos</a>
+    <a href="topico3.php">Próximo: Laços de Repetição →</a>
   </div>
 
 </body>

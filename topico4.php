@@ -132,7 +132,7 @@ echo "Fatorial de 8: " . fatorial(8);', true);
 
   <div class="hero">
     <div class="numero">04</div>
-    <div class="badge badge-4">Integrante 4 </div>
+    <div class="badge badge-4">André</div>
     <h1>Funções e Procedimentos</h1>
     <p>Como organizar, reutilizar e dar tipo seguro ao código com funções.</p>
   </div>

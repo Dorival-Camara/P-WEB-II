@@ -129,7 +129,7 @@ for ($i = 1; $i <= 10; $i++) {
 
   <div class="hero">
     <div class="numero">03</div>
-    <div class="badge badge-3">Integrante 3 </div>
+    <div class="badge badge-3">Dorival</div>
     <h1>Laços de Repetição</h1>
     <p>Como repetir ações automaticamente com for, while, do-while e foreach.</p>
   </div>

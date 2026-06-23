@@ -158,7 +158,7 @@ if ($usuario === "admin" && $senha === "1234" && $ativo) {
 
   <div class="hero">
     <div class="numero">02</div>
-    <div class="badge badge-2">Integrante 2</div>
+    <div class="badge badge-2">Ana</div>
     <h1>Estruturas de Decisão</h1>
     <p>Como o código toma decisões com if, else, switch, ternário e match.</p>
   </div>

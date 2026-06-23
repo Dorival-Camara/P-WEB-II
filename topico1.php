@@ -128,7 +128,7 @@ echo "Email: $email";', true);
 
   <div class="hero">
     <div class="numero">01</div>
-    <div class="badge badge-1">David Peres </div>
+    <div class="badge badge-1">André</div>
     <h1>Variáveis e Tipos de Dados</h1>
     <p>Como o PHP guarda, identifica e converte diferentes tipos de informação.</p>
   </div>

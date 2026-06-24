@@ -1,12 +1,12 @@
-# 📘 PHP na Prática — Programação Web II
+#  PHP na Prática — Programação Web II
 
 Projeto desenvolvido como atividade prática da disciplina de Programação Web II (ETEC), com o objetivo de apresentar os fundamentos da linguagem PHP por meio de exemplos interativos que exibem o código e sua saída lado a lado.
 
-## 🎥 Vídeo Explicativo
+##  Vídeo Explicativo
 
 [Clique aqui para assistir ao vídeo](COLE_O_LINK_DO_YOUTUBE_AQUI)
 
-## 📂 Estrutura do Projeto
+##  Estrutura do Projeto
 
 P-WEB-II/
 
@@ -24,7 +24,7 @@ P-WEB-II/
 
 └── TiposDeDados/     # Exemplos complementares
 
-## 👥 Divisão do Trabalho
+##  Divisão do Trabalho
 
 O projeto foi dividido em quatro tópicos, cada um desenvolvido e apresentado por um integrante do grupo.
 
@@ -40,7 +40,7 @@ Dorival abordou as estruturas de repetição do PHP, explicando como automatizar
 **David Peres — Funções e Procedimentos**
 David Peres apresentou como organizar e reutilizar código por meio de funções. Começou com uma função simples que recebe dois parâmetros e retorna a média entre eles. Em seguida, mostrou como definir valores padrão para parâmetros, permitindo que a função seja chamada com ou sem aquele argumento. David também diferenciou funções de procedimentos, e apresentou o uso da palavra-chave `static` para manter o valor de uma variável entre chamadas consecutivas. Na sequência, introduziu os type hints do PHP, declarando os tipos dos parâmetros e do retorno para tornar o código mais seguro e legível. Para fechar, demonstrou o conceito de recursão com uma função que calcula o fatorial de um número chamando a si mesma.
 
-## ▶️ Como Executar
+##  Como Executar
 
 1. Instale o [XAMPP](https://www.apachefriends.org/) ou qualquer servidor local com PHP
 2. Clone ou baixe este repositório na pasta `htdocs` do XAMPP

@@ -4,7 +4,7 @@ Projeto desenvolvido como atividade prática da disciplina de Programação Web 
 
 ##  Vídeo Explicativo
 
-[Clique aqui para assistir ao vídeo](COLE_O_LINK_DO_YOUTUBE_AQUI)
+[Clique aqui para assistir ao vídeo][(https://youtu.be/brFdCnSprko)]
 
 ##  Estrutura do Projeto
 
